@@ -21,6 +21,10 @@ export class CreateTaskDto {
   readonly taskName: string;
 
   @IsNotEmpty()
+  @IsDateString()
+  readonly scheduleTime: string;
+
+  @IsNotEmpty()
   @IsString()
   readonly taskDescription: string;
 

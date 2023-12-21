@@ -18,7 +18,6 @@ export class TaskController {
   async createTask(@Body() createTaskDto: CreateTaskDto) {
     return this.taskService.createTask(createTaskDto);
   }
-
   @Get(':taskId')
   async getTask(@Param('taskId') taskId: string) {
     return this.taskService.getTask(taskId);
