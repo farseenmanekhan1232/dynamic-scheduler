@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "8b18cb97-cef4-40ba-9cbf-2a11c42f9796",
+		"name": "Dynamic Scheduler API",
+		"description": "Collection for Dynamic Scheduler API endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19265069",
+		"_collection_link": "https://orange-shuttle-683326.postman.co/workspace/My-Workspace~f7935878-3d0a-4834-81c8-6ad4a8263da1/collection/19265069-8b18cb97-cef4-40ba-9cbf-2a11c42f9796?action=share&source=collection_link&creator=19265069"
+	},
+	"item": [
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taskName\":\"Finame\" , \"scheduleTime\":\"2023-12-22T13:12:32.399Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/scheduler/task/create?taskName=First task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"scheduler",
+								"task",
+								"create"
+							],
+							"query": [
+								{
+									"key": "taskName",
+									"value": "First task"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/scheduler/task/save/{taskId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"scheduler",
+								"task",
+								"save",
+								"{taskId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All tasks",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get task",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
