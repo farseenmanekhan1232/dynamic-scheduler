@@ -1,12 +1,4 @@
-import {
-  IsNotEmpty,
-  IsString,
-  IsOptional,
-  IsInt,
-  IsJSON,
-  IsEnum,
-  IsDateString,
-} from 'class-validator';
+import { IsDateString, IsNotEmpty, IsString } from 'class-validator';
 
 enum TaskState {
   NEW = 'NEW',
@@ -18,61 +10,65 @@ enum TaskState {
 export class CreateTaskDto {
   @IsNotEmpty()
   @IsString()
+  readonly taskId: string;
+
+  @IsNotEmpty()
+  @IsString()
   readonly taskName: string;
 
   @IsNotEmpty()
   @IsDateString()
-  readonly scheduleTime: string;
+  readonly scheduleTime: Date;
 
-  @IsNotEmpty()
-  @IsString()
-  readonly taskDescription: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // readonly taskDescription: string;
 
-  @IsNotEmpty()
-  @IsString()
-  readonly category: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // readonly category: string;
 
-  @IsNotEmpty()
-  @IsString()
-  readonly subscriptionCode: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // readonly subscriptionCode: string;
 
-  @IsOptional()
-  @IsString()
-  readonly payloadProvider?: string;
+  // @IsOptional()
+  // @IsString()
+  // readonly payloadProvider?: string;
 
-  @IsNotEmpty()
-  @IsString()
-  readonly taskHandler: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // readonly taskHandler: string;
 
-  @IsOptional()
-  @IsString()
-  readonly predecessor?: string;
+  // @IsOptional()
+  // @IsString()
+  // readonly predecessor?: string;
 
-  @IsOptional()
-  @IsString()
-  readonly executionPolicy?: string;
+  // @IsOptional()
+  // @IsString()
+  // readonly executionPolicy?: string;
 
-  @IsEnum(TaskState)
-  readonly state: TaskState;
+  // @IsEnum(TaskState)
+  // readonly state: TaskState;
 
-  @IsNotEmpty()
-  @IsString()
-  readonly scopeId: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // readonly scopeId: string;
 
-  @IsInt()
-  readonly versionNumber: number;
+  // @IsInt()
+  // readonly versionNumber: number;
 
-  @IsNotEmpty()
-  @IsString()
-  readonly createdBy: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // readonly createdBy: string;
 
-  @IsDateString()
-  readonly createdOn: string;
+  // @IsDateString()
+  // readonly createdOn: string;
 
-  @IsNotEmpty()
-  @IsString()
-  readonly updatedBy: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // readonly updatedBy: string;
 
-  @IsDateString()
-  readonly updatedOn: string;
+  // @IsDateString()
+  // readonly updatedOn: string;
 }

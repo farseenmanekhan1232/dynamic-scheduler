@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
-import { TaskService } from './task/task.service';
+import { SchedulerRegistry } from '@nestjs/schedule';
 import { TaskController } from './task/task.controller';
+import { TaskModule } from './task/task.module';
+import { TaskService } from './task/task.service';
 
 @Module({
-  providers: [TaskService],
-  controllers: [TaskController]
+  providers: [TaskService, SchedulerRegistry],
+  imports: [TaskModule],
+  controllers: [TaskController],
 })
 export class SchedulerModule {}
